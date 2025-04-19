@@ -10,8 +10,6 @@
   "permissions": [
     "webRequest",
     "webRequestBlocking",
-    "https://google.com/*",
-    "https://youtube.com/*",
     "<all_urls>"
   ],
   "browser_action": {

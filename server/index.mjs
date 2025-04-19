@@ -81,10 +81,10 @@ app.get('/getclients', (req, res) =>{
     });
 })
 
-app.get('/restrictions', (req, res) => {
+app.post('/restrictions', (req, res) => {
     const code = req.body.code;
     var users = read_data("./database/clients.json");
-
+    
     //Should access database to retrieve restrictions
     if(code in users){
         res.send(users[code].content_locks);
