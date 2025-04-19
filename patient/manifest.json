@@ -1,6 +1,6 @@
 {
-  "name": "Hello Extensions",
-  "description": "Base Level Extension",
+  "name": "Safety Net",
+  "description": "Therapy connected content blocker",
   "version": "1.0",
   "manifest_version": 2,
   "background": {
@@ -13,7 +13,6 @@
     "<all_urls>"
   ],
   "browser_action": {
-    "default_icon": "hello_extensions.png",
     "default_popup": "popup.html"
   }
 }
