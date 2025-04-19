@@ -1,42 +1,43 @@
-.popup{
-    height: 500px;
-    width: 400px;
-    max-height: max-content;
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 350px; /* Lock the popup height */
+    overflow: hidden; /* Prevent outer scroll */
 }
 
-.leftInfo{
-    float: left;
-    height: 100px;
-    display: grid;
+form{
+    margin: 0;
+}
+
+.mainContent{
+    display: flex;
+    flex-direction: row;
+}
+
+#wrapper{
+    max-height: 400px;
+    max-width: 400px;
+}
+
+.websiteDiv{
+    max-height: 100px;
+    overflow-y: scroll;
 }
 
 .msgBox{
-    height: 100%;
     outline: auto;
 }
 
 .msg{
-    max-height: 100px;
     background-color: white;
 }
 
-.rightInfo{
-    float: right;
-    height: 170px;
-}
-
 .websiteDiv{
-    max-height: 150px;
     overflow: auto;
 }
 
 .website{
     text-decoration: underline;
-}
-
-.code{
-    position: relative;
-    top: 220px;
 }
 
 .title{
