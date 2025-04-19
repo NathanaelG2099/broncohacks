@@ -2,7 +2,7 @@ import express, { json } from 'express'
 import cors from 'cors'
 import fs from 'fs'
 import { v1, v4 } from 'uuid'
-import foo from "./content-locks.json" with {"type": 'json'}
+
 const app = express()
 const port = 3000
 console.log(`Here is a test v1 uuid: ${v1()}`);
@@ -74,7 +74,7 @@ app.get('/id', (req, res) =>{
 app.get('/getclients', (req, res) =>{
     var clients_json = read_data("./database/clients.json");
 
-    write_data("./database/clients.json", clients_json);
+    // write_data("./database/clients.json", clients_entries);
 
     return res.json({
         clients: clients_json
@@ -82,11 +82,26 @@ app.get('/getclients', (req, res) =>{
 })
 
 app.get('/restrictions', (req, res) => {
-    const user = req.body;
+    const userId = req.body.userId;
+    var users = read_data("./database/clients.json");
+    var found_user = null;
+
+    for (let user of users)
+    {
+        if (userId == user.id)
+        {
+            found_user = user;
+            break;
+        }
+    }
 
     //Should access database to retrieve restrictions
-    if(user.userId == 1){
-        res.send(foo);
+    if(found_user != null){
+        res.send(found_user.content_locks);
+    }
+    else
+    {
+        res.status(404);
     }
 })
 

@@ -24,7 +24,7 @@ function ClientsList() {
             {
                 loadSuccess ? 
                 loadedClients.map((item, index) => {
-                    return <ClientItem key={item.client_id} status="loaded" client_id={item.client_id} name={item.name}></ClientItem>
+                    return <ClientItem key={item.client_id} status="loaded" id={item.id} code={item.code} name={item.name}></ClientItem>
                 }) : 
                 <ClientItem status="loading" client_id={-1}></ClientItem>
             }
