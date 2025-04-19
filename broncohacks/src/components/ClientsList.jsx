@@ -20,7 +20,7 @@ function ClientsList() {
     
     return (
     <>
-        <ol className="ml-1 mr-1 mb-4 w-full border-3 border-r-0 border-secondary-green custom-scrollbar rounded-sm max-h-full overflow-y-scroll">
+        <ol className="ml-1 mr-1 mb-4 w-full h-[50%] border-3 border-r-0 border-secondary-green custom-scrollbar rounded-sm max-h-full overflow-y-scroll">
             {
                 loadSuccess ? 
                 loadedClients.map((item, index) => {
