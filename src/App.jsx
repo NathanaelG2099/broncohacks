@@ -1,13 +1,13 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
+    const APP_TITLE = "Title";
+    return (
     <>
-      <div className='text-3xl bg-blue-400 text-center p-2'>Tailwind works!!</div>
+        <Navbar title={APP_TITLE}></Navbar>
+        <div className={`flex justify-center bg-offwhite ml-6 mr-6`}>Test</div>
     </>
-  )
+)
 }
 
 export default App
