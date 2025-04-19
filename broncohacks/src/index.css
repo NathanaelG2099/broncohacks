@@ -1,10 +1,24 @@
 @import "tailwindcss";
 
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--color-healthygreen);
+    border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background-color: var(--color-secondary-green);
+}
+
 :root {
     background-color: var(--color-offwhite);
 }
 
 @theme {
     --color-healthygreen: #4CAF50;
-    --color-offwhite: #AFAFAF
+    --color-offwhite: #f1f1f1;
+    --color-secondary-green: #a1f1a1;
 }

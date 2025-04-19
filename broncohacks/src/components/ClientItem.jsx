@@ -1,6 +1,6 @@
 function ClientItem(props) {
     return (
-    <div className="flex rounded-md m-1 bg-healthygreen text-white font-bold p-1 text-left">
+    <div className="flex rounded-md m-1 bg-healthygreen text-white font-bold p-3 text-left">
         <div className="w-full">
             {props.name}
         </div>

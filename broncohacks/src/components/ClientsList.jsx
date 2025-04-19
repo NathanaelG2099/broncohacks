@@ -26,7 +26,7 @@ function ClientsList() {
     
     return (
     <>
-        <ol className="ml-1 mr-1 mb-4">
+        <ol className="ml-1 mr-1 mb-4 w-full border-3 border-r-0 border-secondary-green custom-scrollbar rounded-sm max-h-full overflow-y-scroll">
             {
                 loadedClients.map((item, index) => {
                     return <ClientItem key={item.client_id} name={item.name}></ClientItem>

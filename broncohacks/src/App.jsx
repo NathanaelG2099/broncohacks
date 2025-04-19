@@ -6,13 +6,15 @@ function App() {
     const APP_TITLE = "Title";
     return (
     <>
-        <Navbar title={APP_TITLE}></Navbar>
-        <BrowserRouter>
-            <Routes>
-                <Route path="/clients" element={<ClientsPage />} />
-                <Route path="/" element={<Navigate to="/clients" />} />
-            </Routes>
-        </BrowserRouter>
+        <div className="flex h-screen">
+            <Navbar title={APP_TITLE}></Navbar>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Navigate to="/clients" />} />
+                    <Route path="/clients" element={<ClientsPage />} />
+                </Routes>
+            </BrowserRouter>
+        </div>
     </>
 )
 }
