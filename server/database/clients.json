@@ -6,7 +6,7 @@
         "content_locks": {
             "fullBlock": [
                 "*://www.youtube.com*",
-                "*://www.tiktok.com*"
+                "*://www.facebook.com*"
             ],
             "timedBlock": [
                 {
@@ -15,7 +15,7 @@
             ],
             "hourBlock": [
                 {
-                    "*://www.instagram.com": "9-10"
+                    "*://www.instagram.com*": "9-10"
                 }
             ]
         }
