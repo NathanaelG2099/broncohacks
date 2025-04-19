@@ -1,9 +1,16 @@
-const express = require('express')
+import express from 'express'
+import cors from 'cors'
+import { v1, v4 } from 'uuid'
 const app = express()
 const port = 3000
-const uuid = require('uuid');
-console.log(`Here is a test v1 uuid: ${uuid.v1()}`);
-console.log(`Here is a test v4 uuid: ${uuid.v4()}`);
+console.log(`Here is a test v1 uuid: ${v1()}`);
+console.log(`Here is a test v4 uuid: ${v4()}`);
+
+// Change for production
+app.use(cors({
+    origin: "http://localhost:5173", 
+}))
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -28,6 +35,19 @@ app.get('/id', (req, res) =>{
     if(currCode != -1){
         
     }
+})
+
+app.get('/getclients', (req, res) =>{
+    var clients_json = [];
+        
+    for (let i = 0; i < 50; i++)
+    {
+        clients_json.push({client_id: i, name: `Client number ${i + 1}`} );
+    }
+
+    return res.json({
+        clients: clients_json
+    });
 })
 
 app.listen(port, () => {
