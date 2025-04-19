@@ -1,11 +1,17 @@
 localStorage.setItem("blocked_urls", JSON.stringify(["*://*.google.com/*"]));
 
+const matchPatternToRegex = (pattern) => {
+    return new RegExp('^' + pattern
+        .replace(/\./g, '\\.')
+        .replace(/\*/g, '.*')
+        .replace(/\//g, '\\/') + '$');
+}
+
 var client_code = "XtykL9";
 
 var site_entry_times = {};
 
-// Get the blocked URLs
-setInterval(() => {
+const update_blocked = () => {
     fetch('http://localhost:3000/restrictions', {
         method: 'POST',
         headers: {
@@ -26,14 +32,26 @@ setInterval(() => {
         localStorage.setItem("blocked_urls", JSON.stringify(data.fullBlock));
         console.log(JSON.parse(localStorage.getItem("blocked_urls")))
     })
-}, 2000)
+}
+
+update_blocked()
+// Get the blocked URLs
+setInterval(update_blocked, 2000)
 
 chrome.webRequest.onBeforeRequest.addListener(
     function(details) { 
-        console.log(details.url)
-        return {cancel: true}; 
+        var blocked_list = JSON.parse(localStorage.getItem("blocked_urls"));
+
+        for (let url of blocked_list) {
+            let pattern = matchPatternToRegex(url);
+            if (pattern.test(details.url)) {
+                console.log("Blocked:", details.url);
+                return { cancel: true };
+            }
+        }
+        return { cancel: false }; 
     },
-    {urls: JSON.parse(localStorage.getItem("blocked_urls"))},
+    {urls: ["<all_urls>"]},
   ["blocking"]
 );
 
