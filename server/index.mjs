@@ -1,7 +1,8 @@
-import express from 'express'
+import express, { json } from 'express'
 import cors from 'cors'
 import fs from 'fs'
 import { v1, v4 } from 'uuid'
+import foo from "./content-locks.json" with {"type": 'json'}
 const app = express()
 const port = 3000
 console.log(`Here is a test v1 uuid: ${v1()}`);
@@ -78,6 +79,15 @@ app.get('/getclients', (req, res) =>{
     return res.json({
         clients: clients_json
     });
+})
+
+app.get('/restrictions', (req, res) => {
+    const user = req.body;
+
+    //Should access database to retrieve restrictions
+    if(user.userId == 1){
+        res.send(foo);
+    }
 })
 
 app.listen(port, () => {
