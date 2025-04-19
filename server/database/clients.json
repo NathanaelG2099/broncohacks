@@ -10,7 +10,7 @@
             ],
             "timedBlock": [
                 {
-                    "*://www.tiktok.com*": 3
+                    "*://www.tiktok.com*": 30
                 }
             ],
             "hourBlock": [
