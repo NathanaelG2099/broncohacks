@@ -15,7 +15,6 @@ function App() {
                     <Route element={<Navigate to="/clients" />} />
                     <Route path="/" element={<Navigate to="/clients" />} />
                     <Route path="/clients" element={<ClientsPage />} />
-                    <Route path="/client/:id" element={<ViewClientPage />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </BrowserRouter>

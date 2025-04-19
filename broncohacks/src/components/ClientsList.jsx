@@ -9,7 +9,7 @@ function ClientsList() {
     
     useEffect(() => {
         get_clients().then((loaded_clients) => {
-            console.log(loadedClients);
+            console.log(loaded_clients.clients);
             if (loaded_clients.success)
             {
                 setLoadSuccess(true);
@@ -23,8 +23,8 @@ function ClientsList() {
         <ol className="ml-1 mr-1 mb-4 w-full h-[50%] border-3 border-r-0 border-secondary-green custom-scrollbar rounded-sm max-h-full overflow-y-scroll">
             {
                 loadSuccess ? 
-                loadedClients.map((item, index) => {
-                    return <ClientItem key={item.client_id} status="loaded" id={item.id} code={item.code} name={item.name}></ClientItem>
+                Object.entries(loadedClients).map(([index, item]) => {
+                    return <ClientItem key={index} status="loaded" code={item.code} name={item.name}></ClientItem>
                 }) : 
                 <ClientItem status="loading" client_id={-1}></ClientItem>
             }

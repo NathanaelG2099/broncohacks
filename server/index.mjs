@@ -82,22 +82,12 @@ app.get('/getclients', (req, res) =>{
 })
 
 app.get('/restrictions', (req, res) => {
-    const userId = req.body.userId;
+    const code = req.body.code;
     var users = read_data("./database/clients.json");
-    var found_user = null;
-
-    for (let user of users)
-    {
-        if (userId == user.id)
-        {
-            found_user = user;
-            break;
-        }
-    }
 
     //Should access database to retrieve restrictions
-    if(found_user != null){
-        res.send(found_user.content_locks);
+    if(code in users){
+        res.send(users[code].content_locks);
     }
     else
     {
