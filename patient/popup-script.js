@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function(){
             const urlPattern = Object.keys(site);
             const timeLimit = site[urlPattern];
 
-            newContent.textContent = urlPattern + "\n" + "Time: " + timeLimit;
+            newContent.textContent = urlPattern + "\n" + "Time: " + timeLimit + " minutes";
             newDiv.appendChild(newContent);
         }
 
