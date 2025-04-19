@@ -1,0 +1,44 @@
+.popup{
+    height: 500px;
+    width: 400px;
+    max-height: max-content;
+}
+
+.leftInfo{
+    float: left;
+    height: 100px;
+    display: grid;
+}
+
+.msgBox{
+    height: 100%;
+    outline: auto;
+}
+
+.msg{
+    max-height: 100px;
+    background-color: white;
+}
+
+.rightInfo{
+    float: right;
+    height: 170px;
+}
+
+.websiteDiv{
+    max-height: 150px;
+    overflow: auto;
+}
+
+.website{
+    text-decoration: underline;
+}
+
+.code{
+    position: relative;
+    top: 220px;
+}
+
+.title{
+    color: #008000;
+}
