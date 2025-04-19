@@ -2,7 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 350px; /* Lock the popup height */
-    overflow: hidden; /* Prevent outer scroll */
+    overflow-y: scroll; /* Prevent outer scroll */
 }
 
 form{
