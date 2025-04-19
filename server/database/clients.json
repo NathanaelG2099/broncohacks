@@ -15,7 +15,7 @@
             ],
             "hourBlock": [
                 {
-                    "*://www.instagram.com": "9-10"
+                    "*://www.instagram.com*": "9-10"
                 }
             ]
         }
