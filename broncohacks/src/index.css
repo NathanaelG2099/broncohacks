@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-    background-color: var(--color-healthygreen);
+    background-color: var(--color-offwhite);
 }
 
 @theme {
     --color-healthygreen: #4CAF50;
-    --color-offwhite: #FAFAF5
+    --color-offwhite: #AFAFAF
 }

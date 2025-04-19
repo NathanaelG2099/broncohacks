@@ -1,7 +1,7 @@
 function Navbar(props) {
     return (
     <>
-        <div className={`flex grid-cols-2 text-3xl w-full sticky top-0 bg-healthygreen p-3`}>
+        <div className={`flex text-xl w-full sticky top-0 bg-healthygreen p-3`}>
             <div>
                 <a href="/" className="">Home</a>
             </div>
