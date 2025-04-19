@@ -25,11 +25,15 @@ form{
 }
 
 .msgBox{
-    outline: auto;
+    margin-right: 30px;
 }
 
 .msg{
     background-color: white;
+    max-width: 120px;
+    min-width: 120px;
+    max-height: 50px;
+    resize: none;
 }
 
 .websiteDiv{

@@ -12,10 +12,12 @@
     "webRequestBlocking",
     "https://google.com/*",
     "https://youtube.com/*",
-    "<all_urls>"
+    "<all_urls>",
+    "storage",
+    "http://localhost:3000/"
   ],
   "browser_action": {
     "default_icon": "hello_extensions.png",
-    "default_popup": "popup.html"
+    "default_popup": "mainMenu.html"
   }
 }
