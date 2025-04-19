@@ -64,10 +64,35 @@ app.get('/login', (req, res) =>{
     }
 })
 
-app.get('/id', (req, res) =>{
-    currCode = req.body[0];
-    if(currCode != -1){
-        
+app.post('/id', (req, res) =>{
+    var code = req.body.code;
+    var clients_json = read_data("./database/clients.json");
+
+    if (code in clients_json)
+    {
+        return res.json({
+            client: clients_json[code]
+        });
+    }
+    else
+    {
+        res.status(404);
+    }
+})
+
+app.post('/add', (req, res) =>{
+    var code = req.body.code;
+    var url = req.body.url;
+    var clients_json = read_data("./database/clients.json");
+
+    if (code in clients_json)
+    {
+        clients_json[code].content_locks.fullBlock.push(url);
+        write_data("./database/clients.json", clients_json);
+    }
+    else
+    {
+        res.status(404);
     }
 })
 

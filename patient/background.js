@@ -1,4 +1,5 @@
 localStorage.setItem("blocked_urls", JSON.stringify(["*://*.google.com/*"]));
+localStorage.setItem("access_times", JSON.stringify({}));
 
 const matchPatternToRegex = (pattern) => {
     return new RegExp('^' + pattern
@@ -12,6 +13,9 @@ var client_code = "XtykL9";
 var site_entry_times = {};
 
 const update_blocked = () => {
+    // let dtime = Date.now() - JSON.parse(localStorage.getItem("current_time"));
+    // console.log(dtime);
+
     fetch('http://localhost:3000/restrictions', {
         method: 'POST',
         headers: {
@@ -28,7 +32,6 @@ const update_blocked = () => {
         return response.json();
     })
     .then(data => {
-        console.log(data.fullBlock)
         localStorage.setItem("blocked_urls", JSON.stringify(data.fullBlock));
         console.log(JSON.parse(localStorage.getItem("blocked_urls")))
     })

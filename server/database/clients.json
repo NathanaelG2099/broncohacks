@@ -5,7 +5,8 @@
         "therapist_id": "7dc40f1e-7c60-4775-8d7b-9479f70f827e",
         "content_locks": {
             "fullBlock": [
-                "*://www.youtube.com*"
+                "*://www.youtube.com*",
+                "*://www.google.com*"
             ],
             "timedBlock": [
                 {

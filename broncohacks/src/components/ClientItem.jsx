@@ -8,7 +8,7 @@ function ClientItem(props) {
                 <span>{props.name}</span>
                 <span>{props.code}</span>
             </div>
-            <a href={`/client/${props.id}`} className="flex justify-end">View</a>
+            <a href={`/client/${props.code}`} className="flex justify-end">View</a>
         </div>}
     </div>
     )
