@@ -1,0 +1,12 @@
+{
+    "userId": 1,
+    "fullBlock":[
+        "*://www.youtube.com*"
+    ],
+    "timedBlock":[
+        {"*://www.tiktok.com*": 3}
+    ],
+    "hourBlock":[
+        {"*://www.instagram.com": "9-10"}
+    ]
+}
